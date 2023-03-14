@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: mygetting-started
+  name: mygetting-started
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mygetting-started
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: mygetting-started
+    spec:
+      containers:
+      - image: docker/getting-started:latest
+        name: mygetting-started
